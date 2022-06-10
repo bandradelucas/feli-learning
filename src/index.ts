@@ -14,6 +14,8 @@ app.get('/', (req: Request, res: Response) => {
   const Cat = mongoose.model('Cat', { name: String });
 
   const kitty = new Cat({ name: 'Zildjian' });
+
+  console.log(kitty);
   kitty.save().then(() => console.log('meow'));
 
   res.send('Express + TypeScript Server');
