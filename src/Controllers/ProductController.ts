@@ -1,15 +1,15 @@
-Product = require('../Models/product/Product');
+const Product = require('../Models/product/Product');
 
 exports.index = function (req, res) {
     Product.get(function (err, product) {
-      if (err)
-          res.json({
-              status: "error",
-              message: err
-          });
-      res.json({
-          message: "Got product Successfully!",
-          data: product       
-      });
-  });
+        if (err)
+            res.json({
+                status: "error",
+                message: err
+            });
+        res.json({
+            message: "Got product Successfully!",
+            data: product
+        });
+    });
 };
