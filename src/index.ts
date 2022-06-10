@@ -11,6 +11,10 @@ const port = process.env.PORT;
 app.get('/', (req: Request, res: Response) => {
   // res.send(process.env.MONGO_CONNECTION);
   mongoose.connect(process.env.DB_CONNECTION);
+  const Cat = mongoose.model('Cat', { name: String });
+
+  const kitty = new Cat({ name: 'Zildjian' });
+  kitty.save().then(() => console.log('meow'));
 
   res.send('Express + TypeScript Server');
 });
