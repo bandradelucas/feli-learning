@@ -1,5 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+import Product from './Models/product/Product';
 
 dotenv.config();
 
@@ -15,7 +16,6 @@ app.get('/', (req: Request, res: Response) => {
 
   const kitty = new Cat({ name: 'Zildjian' });
 
-  console.log(kitty);
   kitty.save().then(() => console.log('meow'));
 
   res.send('Express + TypeScript Server');

@@ -12,14 +12,7 @@ interface Product {
 
 exports.index = function (req: Request, res: Response) {
     Product.get(function (err: Error, product: Product) {
-        // if (err)
-        //     res.json({
-        //         status: "error",
-        //         message: err
-        //     });
-        // res.json({
-        //     message: "Got product Successfully!",
-        //     data: product
-        // });
+        res.send('Express + TypeScript Server');
+        
     });
 };
